@@ -21,6 +21,10 @@ async function getData() {
 
   return filtered;
 };
+if (typeof window !== "undefined") {
+  // safe to access document/window here
+  const element = document.getElementById("my-element");
+}
 
 export default async function Home() {
   const blogs = await getData();
